@@ -27,8 +27,3 @@ void	ft_print_comb(void)
 	}
 	write (1, "789", 3);
 }
-
-int	main (void)
-{
-	ft_print_comb();
-}

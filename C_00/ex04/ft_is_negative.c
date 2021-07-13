@@ -11,8 +11,3 @@ void	ft_is_negative (int n)
 		write (1, "N", 1);
 	}
 }
-
-int	main (void)
-{
-	ft_is_negative(-1);
-}

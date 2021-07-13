@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void	reversalpha(void)
+void	ft_print_reverse_alphabet(void)
 {
 	char	alpha;
 
