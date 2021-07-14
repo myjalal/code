@@ -1,6 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
@@ -21,7 +19,7 @@ void	ft_putnbr(int nb)
 	}
 	else
 	{
-		if (abs(nb) > 9)
+		if (nb > 9)
 		{
 			ft_putnbr(nb / 10);
 		}
