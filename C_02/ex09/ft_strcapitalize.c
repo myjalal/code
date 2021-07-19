@@ -1,28 +1,23 @@
-#include <stdio.h>
-
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	int count;
-	//int cap;
-	
-	count = 0;
-	//cap = 0;
-	if (str[count] >= 'a' && str[count] <= 'z')
+	int	x;
+
+	if (str[0] != '\0' && str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
+	x = 1;
+	while (str[x] != '\0')
 	{
-		str[count] -= 32;
-		while (str[count + 1] >= 'A' && str[count + 1] <= 'Z')
+		if ((((str[x] >= 'a' && str[x] <= 'z')
+					|| (str[x] >= 'A' && str[x] <= 'Z')) && (str[x - 1] < '0'))
+			|| (str[x - 1] > '9' && str[x - 1] < 'A')
+			|| (str[x - 1] > 'Z' && str[x - 1] < 'a') || (str[x - 1] > 'z'))
 		{
-			str[count + 1] -= 32;
-			count++;
+			if (str[x] >= 'a' && str[x] <= 'z')
+				str[x] -= 32;
 		}
-		count++;
+		else if (str[x] >= 'A' && str[x] <= 'Z')
+			str[x] += 32;
+		++x;
 	}
 	return (str);
-}
-
-int	main(void)
-{
-	char	str_0[] = "abCdef";
-	
-	printf("%s", ft_strcapitalize(str_0));
 }
