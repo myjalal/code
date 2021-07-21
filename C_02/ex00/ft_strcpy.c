@@ -1,6 +1,7 @@
 char	*ft_strcpy(char *dest, char *src)
 {
 	int	counter;
+
 	counter = 0;
 	while (src[counter] != '\0')
 	{

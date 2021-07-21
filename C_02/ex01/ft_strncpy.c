@@ -1,6 +1,6 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	counter;
+	unsigned int	counter;
 
 	counter = 0;
 	while (src[counter] != '\0' && counter < n)

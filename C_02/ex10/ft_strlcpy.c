@@ -1,17 +1,38 @@
+int ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 unsigned int	ft_strlcpy (char *dest, char *src, unsigned int size)
 {
 	unsigned int	count;
-
+	
+	if (size == 0)
+		return (ft_strlen(src));
 	count = 0;
-	while (src[count] != '\0' && count < size - 1)
+	while (size > 1 && *src)
 	{
-		dest[count] = src[count];
+		*dest = *src;
+		dest++;
+		src++;
+		size--;
 		count++;
 	}
-	while (count < size)
+	*dest = '\0';
+	while (*dest || *src)
 	{
-		dest[count] = '\0';
-		count++;
+		if (*src)
+		{
+			src++;
+			count++;
+		}
 	}
-	return (0);
+	return (count);
 }
