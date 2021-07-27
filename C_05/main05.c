@@ -23,11 +23,11 @@ int	main(void)
 		if (ft_sqrt(i))
 			printf("nb = %d\nsqrt = %d\n", i, ft_sqrt(i));
 	}
-	printf("Let's check for INT_MAX - 100000 to INT_MAX\n");
+	/*printf("Let's check for INT_MAX - 100000 to INT_MAX\n");
 	for (int i = 100000; i > 0; i--)
 	{
 		nb = INT_MAX;
 		if (ft_sqrt(nb - i))
 			printf("nb = %d\nsqrt = %d\n", nb - i, ft_sqrt(nb - i));
-	}
+	}*/
 }
