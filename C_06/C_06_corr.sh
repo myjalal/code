@@ -1,5 +1,5 @@
 #!bin/bash/
-echo "*** starting norminette ***"
+echo "*** starting norminette ***\n"
 echo "\nex00===================="
 cd ex00
 norminette -R CheckForbiddenSourceHeader
@@ -18,7 +18,7 @@ norminette -R CheckForbiddenSourceHeader
 cd ..
 echo "\n==========DONE=========="
 
-echo "\n*** starting tests..."
+echo "\n*** starting tests...\n"
 
 echo "\nex00===================="
 cd ex00
@@ -44,4 +44,24 @@ echo "\nShould display: \naabb\naabc\naabd\nabbc\n"
 gcc -Wall -Wextra -Werror ft_sort_params.c && ./a.out "aabc" "abbc" "aabb" "aabd"
 cd ..
 
-echo "\n=======Done with tests========="
+echo "\n=======Done with tests=========\n"
+
+echo " \n*** Removing main and a.out ***\n"
+
+echo "ex00===================="
+cd ex00
+rm main00.c a.out
+cd ..
+echo "ex01===================="
+cd ex01
+rm main01.c a.out
+cd ..
+echo "ex02===================="
+cd ex02
+rm main02.c a.out
+cd ..
+echo "ex03===================="
+cd ex03
+rm main03.c a.out
+cd ..
+echo "\n=========DONE===========\n"
