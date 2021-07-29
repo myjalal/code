@@ -1,7 +1,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "ft_strjoin.c"
 char	*ft_strjoin(int size, char **strs, char *sep);
 
 int	main(void)
@@ -13,7 +12,7 @@ int	main(void)
 	
 	for(i = 0; i < size; i++)
         printf("String #%d (length: %lu) = '%s'\n", i, strlen(strings[i]),strings[i]);
-	printf("The separator is '%s'\n\n", sep);
+	printf("The separator is '%s'\n", sep);
 	printf("Resulting string:\n'%s'\n(length: %lu)\n\n", ft_strjoin(size, strings,  sep), strlen(ft_strjoin(size, strings, sep)));
 
 

@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h> // remove before submit !
 
 int	ft_strlen(char	*c)
 {
@@ -11,7 +10,7 @@ int	ft_strlen(char	*c)
 	return (i);
 }
 
-char	ft_strcat(char *strs, char *sep)
+char	*ft_strcat(char *strs, char *sep)
 {
 	int	i;
 	int	len_strs;
@@ -24,45 +23,49 @@ char	ft_strcat(char *strs, char *sep)
 	while(sep[i])
 	{
 		strs[len_strs + i] = sep[i];
-		i++
+		i++;
 	}
+	strs[len_strs + i] = 0;
 	return (strs);
 	
+}
+int		ft_lngh(int size, char **strs, char *sep)
+{
+	int i;
+	int lng;
+	
+	i = 0;
+	lng = 0;
+	while (i < size)
+	{
+		lng = lng + ft_strlen(strs[i]);
+		i++;
+	}
+	lng = lng + (size - 1) * ft_strlen(sep) + 1;
+	return (lng);
 }
 
 char *ft_strjoin(int size, char **strs, char *sep)
 {
-	int		total_size = 0; // taille de
-	int		strs_size = 0;
-	int		sep_size = 0;
 	int		i;
-	char	*string; //string final
+	char	*string;
 	
-	i = 0;
 	if (size == 0)
+	{
+		string = malloc(sizeof(char));
+		*string = 0;
+		return (string);
+	}
+	string = (char *)malloc(sizeof(char) * ft_lngh(size, strs, sep));
+	if (!string)
 		return (0);
-	while (i < size)
-	{
-		strs_size = ft_strlen(strs[i]) + strs_size;
-		i++;
-	}
-	sep_size = ft_strlen(sep) * (size - 1);
-	total_size = strs_size + sep_size;
-	
-	string = (* char)malloc(sizeof(*char) * total_size);
+	*string = 0;
 	i = -1;
-	while (++i < total_size)
+	while (++i < size)
 	{
-		while(
+		ft_strcat(string, strs[i]);
+		if (i < size - 1)
+			ft_strcat(string, sep);
 	}
-}
-
-int main(void)
-{
-	int	size = 3;
-	char	*str[] = {"abc", "hello", "world"};
-	char	*sep;
-	
-	sep = "space";
-	ft_strjoin(size, str, sep);
+	return (string);
 }
