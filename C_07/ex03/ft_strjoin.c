@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jechekao <jechekao@student.42quebec>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/29 11:13:33 by jechekao          #+#    #+#             */
+/*   Updated: 2021/07/29 11:13:46 by jechekao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	ft_strlen(char	*c)
 {
 	int	i;
-	
+
 	i = 0;
 	while (c[i])
 		i++;
@@ -15,25 +27,24 @@ char	*ft_strcat(char *strs, char *sep)
 	int	i;
 	int	len_strs;
 	int	len_sep;
-	
+
 	i = 0;
 	len_strs = ft_strlen(strs);
 	len_sep = ft_strlen(sep);
-	
-	while(sep[i])
+	while (sep[i])
 	{
 		strs[len_strs + i] = sep[i];
 		i++;
 	}
 	strs[len_strs + i] = 0;
 	return (strs);
-	
 }
-int		ft_lngh(int size, char **strs, char *sep)
+
+int	ft_lngh(int size, char **strs, char *sep)
 {
-	int i;
-	int lng;
-	
+	int	i;
+	int	lng;
+
 	i = 0;
 	lng = 0;
 	while (i < size)
@@ -45,11 +56,11 @@ int		ft_lngh(int size, char **strs, char *sep)
 	return (lng);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
 	char	*string;
-	
+
 	if (size == 0)
 	{
 		string = malloc(sizeof(char));
